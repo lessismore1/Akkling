@@ -6,6 +6,7 @@
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="Prolog.fs" />
+    <Compile Include="Stages.fs" />
     <Compile Include="Flow.fs" />
     <Compile Include="Sink.fs" />
     <Compile Include="SubFlow.fs" />

@@ -65,6 +65,10 @@ NUGET
       NETStandard.Library (>= 1.6.1) - restriction: || (&& (== net452) (< net45) (>= netstandard1.6)) (== netstandard1.6)
       Reactive.Streams (>= 1.0.2)
       System.Reflection.TypeExtensions (>= 4.3) - restriction: || (&& (== net452) (< net45) (>= netstandard1.6)) (== netstandard1.6)
+    Akka.Streams.TestKit (1.3.5)
+      Akka.Streams (>= 1.3.5)
+      Akka.TestKit (>= 1.3.5)
+      NETStandard.Library (>= 1.6.1) - restriction: || (&& (== net452) (< net45) (>= netstandard1.6)) (== netstandard1.6)
     Akka.TestKit (1.3.5)
       Akka (>= 1.3.5)
       NETStandard.Library (>= 1.6.1) - restriction: || (&& (== net452) (< net45) (>= netstandard1.6)) (== netstandard1.6)
@@ -953,5 +957,5 @@ NUGET
     xunit.runner.visualstudio (2.4.0-beta.1.build3958)
 GITHUB
   remote: fsharp/FAKE
-    modules/Octokit/Octokit.fsx (8f21aabb0974b0f4c7b7dab674b2ea2691a9db8c)
+    modules/Octokit/Octokit.fsx (dd92a63bf27cae3f34c0ca142102e37fd4af3d70)
       Octokit (>= 0.20)
