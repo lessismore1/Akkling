@@ -15,6 +15,7 @@ open Akka.Streams.Dsl
 
 [<RequireQualifiedAccess>]
 module Flow =
+    open Reactive.Streams
     open Stages
 
     /// Creates a new empty flow.
@@ -558,6 +559,14 @@ module Flow =
         flow.JoinMaterialized(bidi, Func<'mat,'mat2,'mat3>(fn))
 
     let inline iter (fn: 'o -> unit) (flow: Flow<'i,'o,'mat>): Flow<'i,'o,'mat> = flow |> map (fun x -> fn x; x)
+    
+    /// Joins a provided flow with given sink, returning a new sink in the result.
+    let inline toSink (sink: #IGraph<SinkShape<'out>,'mat2>) (flow: Flow<'inp,'out,'mat>) : Sink<'inp,'mat> = 
+        flow.To(sink)
+    
+    /// Joins a provided flow with given sink, returning a new sink in the result.
+    let inline toProcessor (flow: Flow<'inp,'out,'mat>) : IRunnableGraph<IProcessor<'inp,'out>> = 
+        flow.ToProcessor()
     
     /// Filters our consecutive duplicated elements from the stream (uniqueness is recognized 
     /// by provided function).
